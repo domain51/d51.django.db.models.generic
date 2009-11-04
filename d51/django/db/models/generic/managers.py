@@ -6,5 +6,5 @@ class GenericRelationshipManager(models.Manager):
         return self.all().return_related()
 
     def get_query_set(self):
-        return GenericItemQuerySet(self.model)
+        return GenericRelationshipQuerySet(self.model)
 
