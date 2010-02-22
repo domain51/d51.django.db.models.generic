@@ -15,7 +15,7 @@ class GenericRelationshipQuerySet(models.query.QuerySet):
 
     def __getitem__(self, k):
         item = super(self.__class__, self).__getitem__(k)
-        if self._return_related and isinstance(item, ScheduledItem):
+        if self._return_related and isinstance(item, self.model):
             return item.content_object
         return item
 
